@@ -22,3 +22,6 @@ class Professore(BaseModel):
         "Classe",
         back_populates="professore"
     )
+    
+    
+    #cambiamenti
