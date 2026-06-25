@@ -1,0 +1,6 @@
+alembic
+greenlet
+fastapi[standard]
+psycopg[binary]
+SQLAlchemy
+strawberry-graphql[fastapi]
