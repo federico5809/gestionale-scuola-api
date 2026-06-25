@@ -7,7 +7,7 @@ from app.models import Studente
 from app.schemas import CreateStudent
 
 
-class StudentService:
+class StudentService():
 
     def __init__(self, model: Studente, db_session: AsyncSession):
         self.model = model
