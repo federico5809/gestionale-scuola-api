@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models import Studente
 # TOBEFIXED = l'import non viene eseguito correttamente perchè negli schemas manca il file __init__.py con gli export del modulo
+# sistemato
 from app.schemas import CreateStudent
 
 

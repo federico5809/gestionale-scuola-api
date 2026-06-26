@@ -1,5 +1,5 @@
 from .queries import ClassQuery
-from .mutations import ProfessoreMutation
-from .types import Professor
+from .mutations import ClassMutation
+from .types import Class
 
-__all__ = ["Professor", "ProfessorQuery", "ProfessorMutation"]
+__all__ = ["Class", "ClassQuery", "ClassMutation"]
