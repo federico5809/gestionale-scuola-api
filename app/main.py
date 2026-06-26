@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-
+# TOBEFIXED: al èrossimo push vanno eliminnate tutte le pycache
 from app.core import db
 from app.api.graphql.router import graphql_router, GraphQLRouter
 

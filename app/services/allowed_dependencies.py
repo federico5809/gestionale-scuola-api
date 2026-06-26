@@ -1,6 +1,7 @@
 from fastapi import Depends
 from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import AsyncSession
+# TOBEFIXED: l'import db è sbagliato
 from core import db
 
 from app.models.studente import Studente
