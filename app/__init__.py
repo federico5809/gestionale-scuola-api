@@ -1,0 +1,1 @@
+# TOBEFIXED = manca il file main.py dove dentro viene inizializzato il router (è importante perchè è quello che vai ad eseguire con il comando uv run fastapi...)

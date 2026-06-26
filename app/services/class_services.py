@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import UUID
 
 from app.schemas import CreateClasse
+# TOBEFIXED = l'import non viene eseguito correttamente perchè negli schemas manca il file __init__.py con gli export del modulo
 from app.models import Classe
 
 

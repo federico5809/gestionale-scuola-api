@@ -4,6 +4,7 @@ from uuid import UUID
 from app.api.graphql.context import Info
 from .types import Student
 
+
 @type
 class StudentQuery():
   
