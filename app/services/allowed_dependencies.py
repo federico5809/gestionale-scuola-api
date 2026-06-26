@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from core import db
 
 from app.models.studente import Studente
+# TOBEFIXED = l'import non viene eseguito correttamente perchè il nome non è corretto
 from app.services.student_service import StudentService
 
 from app.models.professore import Professore

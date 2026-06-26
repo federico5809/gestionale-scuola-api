@@ -16,7 +16,7 @@ class ProfessorQuery:
     @field
     async def get_professor_by_id(self, info: Info, id: UUID) -> Professor | None:
         professor_service = info.context.professor_service
-
+        # TOBEFIXED = il controllo puoi eseguirlo direttamente nel service professor_service aggiungendo una clusula where
         professors = await professor_service.list_professors()
 
         for professor in professors:

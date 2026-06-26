@@ -5,6 +5,7 @@ from strawberry.fastapi import GraphQLRouter
 
 from app.api.graphql.context import Context
 from app.services import student_services 
+# TOBEFIXED = in app.services manca il file __init__.py
 from app.services import professor_services, professor_service
 from app.services import class_services, get_class_services
 
