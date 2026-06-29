@@ -25,3 +25,8 @@ class Studente(BaseModel):
         "Classe",
         back_populates="studenti"
     )
+
+    voti = relationship(
+        "voto",
+        back_populates="studente_valutato"
+    )

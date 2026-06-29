@@ -12,13 +12,10 @@ from .student import StudentQuery, StudentMutation
 from .professor import ProfessorQuery, ProfessorMutation
 from .classe import ClassQuery, ClassMutation
 
-@type
-class Query(StudentQuery, ProfessorQuery, ClassQuery):
-    pass
+from strawberry.tools import merge_types
 
-@type
-class Mutation(StudentMutation, ProfessorMutation, ClassMutation):
-    pass
+Query = merge_types("Query", (StudentQuery, ProfessorQuery, ClassQuery))
+Mutation = merge_types("Mutation", (StudentMutation, ProfessorMutation, ClassMutation))
 
 schema = Schema(query=Query, mutation=Mutation, extensions=[
     QueryDepthLimiter(max_depth=6)

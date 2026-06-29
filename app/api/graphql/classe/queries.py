@@ -12,7 +12,7 @@ class ClassQuery:
     async def get_class(self, info: Info, id: UUID) -> Class | None:
         class_service = info.context.class_service
 
-        db_class = await class_service.get_by_id(id)
+        db_class = await class_service.get_class(id)
         if not db_class:
             return None
 
