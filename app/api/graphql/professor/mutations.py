@@ -3,7 +3,7 @@ from strawberry import mutation, type, asdict
 from app.api.graphql.context import Info
 
 from .types import CreateProfessorInput, Professor
-from app.schemas.professore import CreateProfessore
+from app.schemas.professor import CreateProfessore
 
 @type
 class ProfessorMutation():

@@ -5,6 +5,7 @@ from .allowed_dependencies import get_class_service
 from .student_services import StudentService
 from .professor_services import ProfessorService
 from .class_services import ClassService
+from .grade_service import GradeService
 
 __all__ = [
   "StudentService",
@@ -14,5 +15,8 @@ __all__ = [
   "get_professor_service",
 
   "ClassService",
-  "get_class_service"
+  "get_class_service",
+  
+  "GradeService",
+  "get_grade_service",
 ]

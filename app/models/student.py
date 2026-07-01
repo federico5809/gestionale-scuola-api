@@ -1,17 +1,17 @@
-from uuid import UUID, uuid4
+from uuid import UUID
 from sqlalchemy import String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.types import Uuid
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from .classe import Classe
+    from .classroom import Class
 
 from .base_model import BaseModel
 
 
-class Studente(BaseModel):
-    __tablename__ = "studente"
+class Student(BaseModel):
+    __tablename__ = "students"
 
     id: Mapped[UUID] = mapped_column(Uuid, primary_key=True)
 
@@ -19,14 +19,7 @@ class Studente(BaseModel):
     cognome: Mapped[str] = mapped_column(String)
     email: Mapped[str] = mapped_column(String, unique=True)
 
-    class_id: Mapped[UUID] = mapped_column(ForeignKey("classe.id"))
+    class_id: Mapped[UUID] = mapped_column(ForeignKey("classes.id"))
 
-    classe_frequentante: Mapped["Classe"] = relationship(
-        "Classe",
-        back_populates="studenti"
-    )
-
-    voti = relationship(
-        "voto",
-        back_populates="studente_valutato"
-    )
+    classe_frequentante: Mapped["Class"] = relationship("Class", back_populates="students")
+    voti = relationship("Grade", back_populates="student")

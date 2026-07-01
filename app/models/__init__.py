@@ -1,11 +1,13 @@
 from .base_model import BaseModel
-from .classe import Classe
-from .studente import Studente
-from .professore import Professore
+from .classroom import Class
+from .student import Student
+from .professor import Professor
+from .grade import Grade
 
 
 __all__ = ["BaseModel",
-        "Classe",
-        "Studente",
-        "Professore"
+        "Class",
+        "Student",
+        "Professor",
+        "Grade"
         ]

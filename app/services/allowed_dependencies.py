@@ -1,26 +1,25 @@
 from fastapi import Depends
 from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import AsyncSession
-# TOBEFIXED: l'import db è sbagliato
-from core import db
+#CORRETTO = import in app.core import db
+from app.core import db
 
-from app.models.studente import Studente
-from app.services.student_services import StudentService
-
-from app.models.professore import Professore
-from app.services.professor_services import ProfessorService
-
-from app.models.classe import Classe
-from app.services.class_services import ClassService
+from app.models import Student, Professor, Class, Grade
+from app.services import StudentService, ProfessorService, ClassService, GradeService
 
 async def get_db_session() -> AsyncGenerator[AsyncSession, None]:
     async with db.get_session() as session:
         yield session
     
 # -------- DB SERVICES --------
+def get_grade_service(session: AsyncSession = Depends(get_db_session)) -> GradeService:
+    return GradeService(Grade, session)
+
 def get_student_service(session: AsyncSession = Depends(get_db_session)) -> StudentService:
-    return StudentService(Studente, session)
+    return StudentService(Student, session)
+
 def get_professor_service(session: AsyncSession = Depends(get_db_session)) -> ProfessorService:
-    return ProfessorService(Professore, session)
+    return ProfessorService(Professor, session)
+
 def get_class_service(session: AsyncSession = Depends(get_db_session)) -> ClassService:
-    return ClassService(Classe, session)
+    return ClassService(Class, session)
